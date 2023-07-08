@@ -11,12 +11,12 @@
 	<div class="repository-information">
 		<div>
 			<div class="repository-information__main-info">
-				<p class="repository-information__name">{{ repository.name }} - by {{ repository.author }}</p>
+				<p class="repository-information__name">{{ repository.name }} - by {{ repository.owner.login }}</p>
 				<div class="repository-information__rating">
-					<div class="repository-information__stars">
-						<v-icon v-for="(star, index) in repository.stars" :key="index" icon="mdi-star"></v-icon>
+					<div class="repository-information__rating-info">
+						<p class="repository-information__stars">{{ repository.stargazers_count }} <v-icon icon="mdi-star"></v-icon></p>
 					</div>
-					<p class="repository-information__forks">{{ repository.forks }} forks</p>
+					<p class="repository-information__rating-info">{{ repository.forks }} forks</p>
 				</div>
 			</div>
 			<p class="repository-information__description">{{ repository.description }}</p>
@@ -27,7 +27,6 @@
 <style lang="scss" scoped>
 @import '../../assets/index.scss';
 	.repository-information {
-		color: $text-color-secondary;
 		padding: 40px 0;
 
 		&__main-info {
@@ -43,13 +42,15 @@
 		&__rating {
 			display: flex;
 		}
-
-		&__stars {
-			margin-right: 20px;
+		
+		&__rating-info {
+			font-size: 20px;
 		}
 
-		&__forks {
-			font-size: 20px;
+		&__stars {
+			display: flex;
+   			align-items: center;
+			margin-right: 20px;
 		}
 
 		&__description {
