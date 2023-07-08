@@ -25,25 +25,19 @@
 @import '../assets/index.scss';
 	.sort {
 		color: $text-color-secondary;
-		display: flex;
+		display: block;
 		justify-content: space-between;
 		margin-bottom: 20px;
 
-		&__elements-container {
-			display: flex;
-		}
-
 		&__description-text {
-			font-size: 24px;
+			display: none;
+			font-size: 20px;
 		}
 
 		&__element {
 			display: flex;
-			margin-right: 30px;
-
-			&:last-child {
-				margin-right: 0;
-			}
+			justify-content: start;
+			margin-bottom: 16px;
 		}
 
 		&__element-text {
@@ -53,9 +47,46 @@
 
 		&__button {
 			margin-right: 10px;
+			width: 40px;
+			height: 40px;
 
 			&:last-child {
 				margin-right: 0;
+			}
+		}
+	}
+
+	// styles for big mobil size (576px) and higher
+	@media all and (min-width: 36em) {
+		.sort {
+			&__elements-container {
+				display: flex;
+				justify-content: center;
+			}
+
+			&__element {
+				justify-content: unset;
+				margin-right: 30px;
+				margin-bottom: 0;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	// styles for tablet size (768px) and higher
+	@media all and (min-width: 48em) {
+		.sort {
+			display: flex;
+
+			&__elements-container {
+				justify-content: unset;
+			}
+
+			&__description-text {
+				display: block;
 			}
 		}
 	}

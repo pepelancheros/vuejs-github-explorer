@@ -30,31 +30,56 @@
 		padding: 40px 0;
 
 		&__main-info {
-			display: flex;
-			justify-content: space-between;
 			margin-bottom: 20px;
 		}
 
 		&__name {
 			font-size: 24px;
 		}
-
-		&__rating {
-			display: flex;
-		}
 		
 		&__rating-info {
-			font-size: 20px;
+			font-size: 16px;
 		}
 
 		&__stars {
 			display: flex;
    			align-items: center;
-			margin-right: 20px;
+			justify-content: start;
 		}
 
 		&__description {
 			font-size: 16px;
+		}
+	}
+
+	// styles for big mobil size (576px) and higher
+	@media all and (min-width: 36em) {
+		.repository-information {
+			&__main-info {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&__rating-info {
+				font-size: 20px;
+			}
+
+			&__stars {
+				justify-content: end;
+			}
+		}
+	}
+
+	// styles for tablet size (768px) and higher
+	@media all and (min-width: 48em) {
+		.repository-information {
+			&__rating {
+				display: flex;
+			}
+
+			&__stars {
+				margin-right: 20px;
+			}
 		}
 	}
 </style>

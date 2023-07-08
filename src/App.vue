@@ -28,7 +28,7 @@ body {
 <style lang="scss" scoped>
 @import './assets/index.scss';
 .logo {
-	margin: 50px auto;
+	margin: 40px auto;
     display: block;
 }
 </style>

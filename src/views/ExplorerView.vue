@@ -35,19 +35,34 @@ import SortSearch from '../components/SortSearch.vue'
 			color: $text-color-secondary;
 		}
 
-		&__form {
-			display: flex;
-		}
-
 		&__search-field {
-			margin-bottom: 40px;
-			margin-right: 40px;
 			color: $text-color-secondary;
 		}
 
 		&__search-button {
 			background-color: $btn-background-color-primary;
 			border-radius: 50px;
+			width: 100%;
+			margin-bottom: 24px;
+		}
+	}
+
+	// styles for big mobil size (576px) and higher
+	@media all and (min-width: 36em) {
+		.explorer {
+			&__form {
+				display: flex;
+			}
+
+			&__search-field {
+				margin-bottom: 40px;
+				margin-right: 40px;
+			}
+
+			&__search-button {
+				width: auto;
+				margin-bottom: 0;
+			}
 		}
 	}
 </style>
