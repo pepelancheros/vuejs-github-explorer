@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import RepoInfo from './RepoInfo.vue';
 	const props = defineProps({
-		searchQuery: String
+		searchQuery: String,
+		sortElement: String,
+		sortOrder: String
 	})
 </script>
 
@@ -10,7 +12,7 @@ import RepoInfo from './RepoInfo.vue';
 		<div v-if="repositories.length">
 			<div  v-for="(result, index) in repositories.slice(page -1, page + 3)" :key="index" >
 				<RepoInfo :repository="result"></RepoInfo>
-				<hr v-if="index !== repositories.length - 1">
+				<hr>
 			</div>
 			<v-pagination
 				v-model="page"
@@ -53,7 +55,13 @@ import RepoInfo from './RepoInfo.vue';
 				try {
 					if (this.searchQuery) {
 						let endpoint = "https://api.github.com/search/repositories"
-						let response = await fetch(endpoint + "?q=" + this.searchQuery)
+						let sortQueries = ''
+						if (this.sortOrder) {
+							sortQueries = '&sort=' + this.sortElement + '&order=' + this.sortOrder
+						}
+						let endpointWithQueries = endpoint + "?q=" + this.searchQuery + sortQueries
+						console.log('endpointWithqueries: ', endpointWithQueries)
+						let response = await fetch(endpointWithQueries)
 						let responseJSON = await response.json();
 						this.repositories = responseJSON.items
 						console.log('repositories: ', this.repositories[0].name)
@@ -68,6 +76,9 @@ import RepoInfo from './RepoInfo.vue';
 			searchQuery: function () {
 				this.getSearchResult()
 			},
+			sortOrder: function() {
+				this.getSearchResult()
+			}
 		},
 
 		created() {

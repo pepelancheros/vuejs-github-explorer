@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Results from '../components/Results/Results.vue'
+import SortSearch from '../components/SortSearch.vue'
 </script>
 
 <template>
@@ -13,9 +14,9 @@ import Results from '../components/Results/Results.vue'
 		>
 			<v-text-field class="explorer__search-field" variant="underlined" v-model="searchQuery" label="search for a repository" prepend-icon="mdi-magnify"></v-text-field>
 			<v-btn @click="onSubmit" class="explorer__search-button" size="x-large">Search</v-btn>
-
 		</v-form>
-		<Results class="explorer__results" :search-query="searchQuerySubmitted"></Results>
+		<SortSearch @sort="sortBy"></SortSearch>
+		<Results class="explorer__results" :search-query="searchQuerySubmitted" :sort-element="sortElement" :sort-order="sortOrder"></Results>
 	</div>
   </main>
 </template>
@@ -25,6 +26,7 @@ import Results from '../components/Results/Results.vue'
 	.explorer {
 		max-width: 1000px;
 		margin: 80px auto;
+		padding: 0 40px;
 
 		&__title {
 			text-align: center;
@@ -55,13 +57,19 @@ import Results from '../components/Results/Results.vue'
     data: () => ({
 		form: false,
 		searchQuery: '',
-		searchQuerySubmitted: ''
+		searchQuerySubmitted: '',
+		sortElement: '',
+		sortOrder: ''
     }),
 	methods: {
 		onSubmit () {
 			this.searchQuerySubmitted = this.searchQuery
 			if (!this.form) return
 		},
+		sortBy(query) {
+			this.sortElement = query.element
+			this.sortOrder = query.order
+		}
 	}
   }
 </script>
