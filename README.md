@@ -1,46 +1,47 @@
-# proper-github-explorer
+# Proper github explorer
 
-This template should help get you started developing with Vue 3 in Vite.
+This project was generated with  [Vue create-vue](https://github.com/vuejs/create-vue)
 
-## Recommended IDE Setup
+## Start 🚀
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+_These instructions will let you get a copy of the proyect in your local computer._
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## General styles files structure in this project
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+```
+├── README.md
+└── src
+    └── index.scss
+    └── assets
+        ├── base
+            └── variables.scss
+```
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+---
 
-## Customize configuration
+### Pre-requisites 📋
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+* Node.js
 
-## Project Setup
+### Instalation 🔧
 
-```sh
+Instal Node Modules:
+
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+run the project:
 
-```sh
+```
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Autors ✒️
 
-```sh
-npm run build
-```
+* **Sebastian Lancheros** - *Developer* - [pepelancheros](https://github.com/pepelancheros)
 
-### Lint with [ESLint](https://eslint.org/)
 
-```sh
-npm run lint
-```
+
