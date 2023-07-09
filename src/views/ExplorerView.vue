@@ -6,14 +6,14 @@ import SortSearch from '../components/SortSearch.vue'
 <template>
   <main>
 	<div class="explorer">
-		<h2 class="explorer__title">GitHub Explorer</h2>
+		<h1 class="explorer__title">GitHub Explorer</h1>
 		<v-form
 			v-model="form"
 			@submit.prevent="onSubmit"
 			class="explorer__form"
 		>
 			<v-text-field class="explorer__search-field" variant="underlined" v-model="searchQuery" label="search for a repository" prepend-icon="mdi-magnify"></v-text-field>
-			<v-btn @click="onSubmit" class="explorer__search-button" size="x-large">Search</v-btn>
+			<v-btn @click="onSubmit" class="explorer__search-button" size="large">Search</v-btn>
 		</v-form>
 		<SortSearch @sort="sortBy"></SortSearch>
 		<Results class="explorer__results" :search-query="searchQuerySubmitted" :sort-element="sortElement" :sort-order="sortOrder"></Results>
@@ -25,13 +25,12 @@ import SortSearch from '../components/SortSearch.vue'
 @import '../assets/index.scss';
 	.explorer {
 		max-width: 1000px;
-		margin: 80px auto;
+		margin: 40px auto;
 		padding: 0 40px;
 
 		&__title {
 			text-align: center;
 			margin-bottom: 24px;
-			font-size: 48px;
 			color: $text-color-secondary;
 		}
 
@@ -52,16 +51,18 @@ import SortSearch from '../components/SortSearch.vue'
 		.explorer {
 			&__form {
 				display: flex;
+				align-items: start;
+				margin-bottom: 40px;
 			}
 
 			&__search-field {
-				margin-bottom: 40px;
 				margin-right: 40px;
 			}
 
 			&__search-button {
 				width: auto;
 				margin-bottom: 0;
+				margin-top: 10px;
 			}
 		}
 	}
