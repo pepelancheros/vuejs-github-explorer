@@ -52,7 +52,7 @@
 		}
 	}
 
-	// styles for big mobil size (576px) and higher
+	// styles for big mobile size (576px) and higher
 	@media all and (min-width: 36em) {
 		.repository-information {
 			&__main-info {

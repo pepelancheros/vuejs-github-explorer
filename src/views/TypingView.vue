@@ -1,7 +1,7 @@
 <template>
 	<div class="typing">
 	  	<h1 class="typing__title">Typing Challenge</h1>
-		<p>For this challenge I worked in a codepen. It can be found in <a href="https://codepen.io/pepeligroso/pen/abQLgZp">here</a></p>
+		<p>For this challenge I worked in a codepen that can be found in <a href="https://codepen.io/pepeligroso/pen/abQLgZp">here</a></p>
 	</div>
 </template>
   
@@ -19,7 +19,7 @@
 		}
 
 		a {
-			color: $text-color-secondary;
+			color: $btn-background-color-primary;
 		}
 	}
 </style>

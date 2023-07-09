@@ -45,7 +45,7 @@
 		}
 
 		a {
-			color: $text-color-secondary;
+			color: $btn-background-color-primary;
 		}
 	}
 </style>

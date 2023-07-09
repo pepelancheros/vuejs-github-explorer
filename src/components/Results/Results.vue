@@ -21,7 +21,7 @@ import RepoInfo from './RepoInfo.vue';
 			></v-pagination>
 		</div>
 		<div v-else class="results__empty-search">
-			<p>Please type a keyword of the repository you want to find in the above search bar</p>
+			<p>Type a keyword of the repository you want to find in the above search bar</p>
 		</div>
 	</div>
 </template>

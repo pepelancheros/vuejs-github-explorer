@@ -36,7 +36,7 @@
 
 		&__element {
 			display: flex;
-			justify-content: start;
+			justify-content: end;
 			margin-bottom: 16px;
 		}
 
