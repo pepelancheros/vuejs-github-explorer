@@ -52,6 +52,8 @@ body {
 .wrapper__nav-mobile .v-application__wrap {
 	display: flex;
     flex-direction: row;
+	height: 320px;
+    min-height: fit-content;
 }
 
 .v-navigation-drawer__content {

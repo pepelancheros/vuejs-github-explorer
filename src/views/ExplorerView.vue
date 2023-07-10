@@ -15,8 +15,8 @@ import SortSearch from '../components/SortSearch.vue'
 			<v-text-field class="explorer__search-field" variant="underlined" v-model="searchQuery" label="search for a repository" prepend-icon="mdi-magnify"></v-text-field>
 			<v-btn @click="onSubmit" class="explorer__search-button" size="large">Search</v-btn>
 		</v-form>
-		<SortSearch @sort="sortBy"></SortSearch>
-		<Results class="explorer__results" :search-query="searchQuerySubmitted" :sort-element="sortElement" :sort-order="sortOrder"></Results>
+		<SortSearch v-show="!showDetails" @sort="sortBy"></SortSearch>
+		<Results class="explorer__results" :search-query="searchQuerySubmitted" :sort-element="sortElement" :sort-order="sortOrder" @showing-details="setShowDetails"></Results>
 	</div>
   </main>
 </template>
@@ -75,7 +75,8 @@ import SortSearch from '../components/SortSearch.vue'
 		searchQuery: '',
 		searchQuerySubmitted: '',
 		sortElement: '',
-		sortOrder: ''
+		sortOrder: '',
+		showDetails: false
     }),
 	methods: {
 		onSubmit () {
@@ -85,6 +86,9 @@ import SortSearch from '../components/SortSearch.vue'
 		sortBy(query) {
 			this.sortElement = query.element
 			this.sortOrder = query.order
+		},
+		setShowDetails(show) {
+			this.showDetails = show
 		}
 	}
   }
