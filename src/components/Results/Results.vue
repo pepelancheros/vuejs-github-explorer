@@ -16,7 +16,7 @@ import RepoInfo from './RepoInfo.vue';
 			</div>
 			<v-pagination
 				v-model="page"
-				:length="4"
+				:length="10"
 				rounded="circle"
 			></v-pagination>
 		</div>
@@ -54,20 +54,25 @@ import RepoInfo from './RepoInfo.vue';
 			async getSearchResult() {
 				try {
 					if (this.searchQuery) {
-						let endpoint = "https://api.github.com/search/repositories"
+						const endpoint = "https://api.github.com/search/repositories"
 						let sortQueries = ''
 						if (this.sortOrder) {
 							sortQueries = '&sort=' + this.sortElement + '&order=' + this.sortOrder
 						}
-						let endpointWithQueries = endpoint + "?q=" + this.searchQuery + sortQueries
-						console.log('endpointWithqueries: ', endpointWithQueries)
-						let response = await fetch(endpointWithQueries)
-						let responseJSON = await response.json();
+						const endpointWithQueries = endpoint + "?q=" + this.searchQuery + sortQueries
+						const response = await fetch(endpointWithQueries)
+						if (response.status === 404) {
+							throw new Error('Page not found')
+						} else if (response.status === 500) {
+							throw new Error('Server error')
+						} else if (!response.ok) {
+							throw new Error(`HTTP error. Status: ${response.status}`)
+						}
+						const responseJSON = await response.json();
 						this.repositories = responseJSON.items
-						console.log('repositories: ', this.repositories[0].name)
 					}
 				} catch (error) {
-					console.log(error);
+					console.error(error);
 				}
 			}
 		},
