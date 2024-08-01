@@ -1,4 +1,4 @@
-# Proper github explorer
+# Vuejs github explorer
 
 This project was generated with  [Vue create-vue](https://github.com/vuejs/create-vue)
 
@@ -39,7 +39,7 @@ run the project:
 npm run dev
 ```
 
-## Autors ✒️
+## Autor ✒️
 
 * **Sebastian Lancheros** - *Developer* - [pepelancheros](https://github.com/pepelancheros)
 
